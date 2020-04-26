@@ -5,15 +5,13 @@ cache:
   yarn: true
 
 install:
-  - yarn install
+  - npm install
 
 script:
-  - yarn lint
-  - yarn build
-  - DEBUG=true yarn coverage
+  - npm run ig
 
 deploy:
   provider: script
-  script:  echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc && npm run release
+  script: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc && npm run release
   on:
     tags: true
