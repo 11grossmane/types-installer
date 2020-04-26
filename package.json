@@ -25,7 +25,7 @@
     "coverage": "jest --coverage",
     "release": "cd dist && npm publish",
     "build": "./scripts/build",
-    "ig": "rm -rf ./dist && npm i && tsc && npm i -g",
+    "ig": "rm -rf ./dist && tsc && npm i -g",
     "build:windows": "ts-node ./scripts/build.ts",
     "preversion": "yarn lint && yarn build && yarn coverage",
     "preversion:windows": "yarn lint && yarn build:windows && yarn coverage"
