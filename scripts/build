@@ -4,18 +4,18 @@
 rm -rf dist
 mkdir dist
 
-# Copy latent files into ./dist
-cp * dist 2>&1 | grep -v 'omitting directory'
-cp .* dist 2>&1 | grep -v 'omitting directory'
+# # Copy latent files into ./dist
+# cp * dist 2>&1 | grep -v 'omitting directory'
+# cp .* dist 2>&1 | grep -v 'omitting directory'
 
 # Build typescript
-yarn tsc
+tsc -p .
 
-# Copy latent files from source, recursively
-cd src
-find . -name "*.json" -type f -exec cp --parents {} ../dist/ \;
-cd ..
+# # Copy latent files from source, recursively
+# cd src
+# find . -name "*.json" -type f -exec cp --parents {} ../dist/ \;
+# cd ..
 
-# Make bins executable
-chmod +x ./dist/bin/*
+# # Make bins executable
+# chmod +x ./dist/bin/*
 
