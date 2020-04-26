@@ -2,7 +2,7 @@
   "name": "types-installer",
   "version": "1.6.3",
   "description": "Installs @types for your existing dependencies",
-  "main": "./actions",
+  "main": "./src/cli.ts",
   "author": "nfour <novus.nfour@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -13,7 +13,7 @@
     "cli"
   ],
   "bin": {
-    "types-installer": "./bin/types-installer.js"
+    "types-installer": "./dist/cli.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
     "coverage": "jest --coverage",
     "release": "cd dist && npm publish",
     "build": "./scripts/build",
-    "i": "npm run build && npm install -g",
+    "ig": "rm -rf ./dist && npm i && tsc && npm i -g",
     "build:windows": "ts-node ./scripts/build.ts",
     "preversion": "yarn lint && yarn build && yarn coverage",
     "preversion:windows": "yarn lint && yarn build:windows && yarn coverage"
@@ -33,7 +33,7 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "chalk": "^1.1.3",
-    "commander": "^2.9.0",
+    "commander": "^5.1.0",
     "execa": "^0.6.3",
     "inquirer": "^3.0.6"
   },
@@ -47,7 +47,7 @@
     "@types/node": "^13.13.2",
     "@types/typescript": "^2.0.0",
     "jest": "^21.2.1",
-    "ts-jest": "^21.2.3",
+    "ts-jest": "^21.2.4",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "tslint-config-temando": "^1.5.11",
