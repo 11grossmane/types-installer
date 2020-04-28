@@ -20,16 +20,12 @@
     "url": "https://github.com/nfour/types-installer"
   },
   "scripts": {
-    "test": "jest",
     "lint": "tslint -p tsconfig.json",
     "coverage": "jest --coverage",
     "release": "cd dist && npm publish",
     "build": "./scripts/build",
     "ig": "rm -rf ./dist && tsc && npm i -g",
-    "test": "rm -rf ./dist && tsc",
-    "build:windows": "ts-node ./scripts/build.ts",
-    "preversion": "yarn lint && yarn build && yarn coverage",
-    "preversion:windows": "yarn lint && yarn build:windows && yarn coverage"
+    "test": "rm -rf ./dist && npm install && tsc"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
