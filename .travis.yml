@@ -1,17 +1,4 @@
-language: node_js
-node_js: ["6.10"]
-
-cache:
-  yarn: true
-
-install:
-  - npm install
-
-script:
-  - npm run ig
-
-deploy:
-  provider: script
-  script: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc && npm run release
-  on:
-    tags: true
+llanguage: node_js
+node_js:
+  - '13'
+  - '12'
